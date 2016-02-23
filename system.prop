@@ -7,3 +7,6 @@ ro.radio.noril=yes
 
 # HW (this enables the navbar, a user can easily set it to 1 to disable it)
 qemu.hw.mainkeys=0 
+
+# Disable persistent GPU compositing
+debug.sf.disable_hwc=1
