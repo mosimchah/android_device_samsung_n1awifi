@@ -4,6 +4,7 @@ import init.universal5420.wifi.rc
 
 on init
     export LD_SHIM_LIBS "/system/bin/gpsd|libdmitry.so"
+    export LD_SHIM_LIBS "/system/vendor/lib/libwvm.so|libshims_wvm.so"
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard

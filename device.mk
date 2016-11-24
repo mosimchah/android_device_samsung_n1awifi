@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     e2fsck \
     setup_fs
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshims_wvm
+
 # Gello
 PRODUCT_PACKAGES += \
     Gello
