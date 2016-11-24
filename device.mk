@@ -71,7 +71,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.universal5420 \
     libhwjpeg
 
 PRODUCT_PROPERTY_OVERRIDES += \
