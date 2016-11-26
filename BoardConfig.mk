@@ -196,6 +196,9 @@ BOARD_ANT_WIRELESS_POWER := "bluedroid"
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
 
+# Audio blobs
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_WLAN_DEVICE                := bcmdhd
