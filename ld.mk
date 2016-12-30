@@ -1,8 +1,4 @@
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-
-# Inherit from n1awifi device
-$(call inherit-product, device/samsung/n1awifi/device.mk)
+$(call inherit-product, device/samsung/n1awifi/full_n1awifi.mk)
 
 # Inherit some common ld stuff.
 $(call inherit-product, vendor/ld/config/common_full_tablet_wifionly.mk)
