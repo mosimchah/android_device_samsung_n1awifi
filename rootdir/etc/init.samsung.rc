@@ -18,6 +18,15 @@ on init
 on post-fs-data
     # sec_efs_file
     mkdir /efs/sec_efs 0775 radio system
+    # SA, System SW, SAMSUNG create log directory
+    mkdir /data/log 0775 system log
+    chown system log /data/log
+    mkdir /data/anr 0775 system system
+    chown system system /data/anr
+    chmod 0775 /data/log
+    chmod 0775 /data/anr
+    restorecon /data/log
+    restorecon /data/anr
 
     # Latin SSMS feature
     mkdir /efs/SMS 0775 radio system
@@ -53,6 +62,14 @@ on post-fs-data
 
 
 # [ SEC_MM_DRM
+    # sdrm
+    mkdir /efs/drm 0774 drm system
+    mkdir /efs/drm/sdrm 0774 drm system
+    mkdir /efs/drm/sdrm/data_agent 0774 drm system
+    restorecon /efs/drm
+    restorecon /efs/drm/sdrm
+    restorecon /efs/drm/data_agent
+
     # OMA DB directory creation
     mkdir /data/system/databases 0775
     chown system system /data/system/databases
@@ -82,6 +99,20 @@ on post-fs-data
     restorecon_recursive /data/property
     restorecon_recursive /data/security
 # ]
+
+    mkdir /mnt/shell 0750 shell shell
+    mkdir /mnt/media_rw 0750 media_rw media_rw
+
+#service_redefine drm /system/bin/drmserver.samsung
+#    class main
+#    user drm
+#    group system drm inet drmrpc sdcard_r sdcard_rw media_rw radio shell
+
+#service_redefine media /system/bin/mediaserver
+#    class main
+#    user media
+#    group system audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm sdcard_rw sdcard_r media_rw shell lgt_gid qcom_diag
+#    ioprio rt 4
 
 on boot
     # Vibetonz 
